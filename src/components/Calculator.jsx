@@ -46,18 +46,14 @@ const Calculator = () => {
 
   const handleOperatorClick = (value) => {
     if (value === '=') {
-      // Perform the calculation when '=' is clicked
       calculateResult();
     } else {
-      // Check for consecutive operators
       const lastPart = expressionParts[expressionParts.length - 1];
       if (!isOperator(lastPart)) {
-        // Record the entire expression when an operator is clicked
         setExpressionParts((prevParts) => [...prevParts, value]);
         setInputValue((prevValue) => prevValue + value);
       }
       else if ((lastPart === '-' || lastPart==='+') && (value === '-' || value === '+')) {
-        // Replace the last operator with the new operator
         const newParts = [...expressionParts];
         newParts.pop();
         newParts.push(value);
@@ -104,7 +100,6 @@ const Calculator = () => {
   };
 
   const handlePercentage = () => {
-    // Handle percentage operation if there is a number before "%"
     const lastPartIndex = expressionParts.length - 1;
     if (lastPartIndex >= 0 && !isNaN(expressionParts[lastPartIndex])) {
       const lastPart = parseFloat(expressionParts.pop()) / 100;
@@ -115,7 +110,6 @@ const Calculator = () => {
     }
   };
 
-  // Helper function to check if a string is an operator
   const isOperator = (value) => {
     const operators = ['+', '-', '*', '/'];
     return operators.includes(value);
