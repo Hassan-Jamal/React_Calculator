@@ -4,10 +4,9 @@ const Home = () => {
   return (
     <>
     <div className='main'>
-      <h1>Welcome to our page</h1>
+      <h1>Welcome, to Home page</h1>
       </div>
     </>
   )
 }
-
 export default Home
