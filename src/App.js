@@ -5,6 +5,8 @@ import { Link, Route, Router, Routes } from 'react-router-dom';
 import Calculator from './components/Calculator';
 import Quote from './components/Quote';
 
+
+
 function App() {
   return (
     <>
